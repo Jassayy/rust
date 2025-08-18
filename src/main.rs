@@ -1,15 +1,24 @@
-//functions
+//practice 
 fn main(){
-    let a = 4;
-    let b = 18;
 
-    let ans = do_sum(a, b);
+    let n: i32 = 5;
 
-    print!("{}" , ans);
+    let ans: i32 = fib(n);
+
+    print!("{}th number in fib series is: {}" , n , ans );
 }
 
+fn fib(n : i32) -> i32 {
 
-//this function return i32 integer
-fn do_sum(a: i32, b: i32) -> i32 {
-	return a + b;
+    
+    if n == 0 {
+        return 0;
+    }
+    if n == 1 {
+        return 1;
+    }
+
+    return fib(n-1) + fib(n-2);
 }
+
+// 0 1 1 2 3 5
