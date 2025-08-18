@@ -1,24 +1,18 @@
-//practice 
+// //memory management in rust
+// Rust has its own ownership model for memory management
+// Makes it extremely safe to memory errors
+//that means....you can allocate and deallocate memory but there 
+//are a set of rules we must follow while doing it
+//without the need of garbage collectors
+
+//It achieves this using the
+// Mutability
+// Heap and memory
+// Ownership model
+// Borrowing and references
+// Lifetimes
+ 
+
 fn main(){
 
-    let n: i32 = 5;
-
-    let ans: i32 = fib(n);
-
-    print!("{}th number in fib series is: {}" , n , ans );
 }
-
-fn fib(n : i32) -> i32 {
-
-    
-    if n == 0 {
-        return 0;
-    }
-    if n == 1 {
-        return 1;
-    }
-
-    return fib(n-1) + fib(n-2);
-}
-
-// 0 1 1 2 3 5
