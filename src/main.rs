@@ -1,18 +1,13 @@
-// //memory management in rust
-// Rust has its own ownership model for memory management
-// Makes it extremely safe to memory errors
-//that means....you can allocate and deallocate memory but there 
-//are a set of rules we must follow while doing it
-//without the need of garbage collectors
+//jargon 1
+//mutability
+//Immutable variables represent variables whose value cant be changed once assigned
 
-//It achieves this using the
-// Mutability
-// Heap and memory
-// Ownership model
-// Borrowing and references
-// Lifetimes
- 
+//by default variables are immutable
+//can use "mut" keyword for making it mutable
+//knowing a data wont change will make the compiler to optimize better
 
-fn main(){
-
+fn main() {
+    let mut x: i32 = 1;
+    x = 2; //no error as we used mut
+    println!("{}", x);
 }
