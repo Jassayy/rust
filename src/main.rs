@@ -1,31 +1,15 @@
-fn main() {
-    let is_even = true;
+//functions
+fn main(){
+    let a = 4;
+    let b = 18;
 
-    if is_even {
-        println!("the number is even");
-    } else if !is_even {
-        println!("the number is odd");
-    }
+    let ans = do_sum(a, b);
 
-    // loops
-    for i in 0..11 {
-        println!("{}", i);
-    }
-
-    let sentence: String = String::from("my name is jas");
-    let first_word = get_first_word(&sentence);//passing only ref on sentence as in rust if we dont use & we transfer ownership into the function and hence we wont be able to use "sentence afterwards"
-
-    println!("{}", first_word); 
+    print!("{}" , ans);
 }
-//this is how we can iterate over strings or even arrays or maps etc
-// fn function_name(args) -> return type { }
-fn get_first_word(sentence: &str) -> String {
-    let mut ans: String = String::from("");
-    for char in sentence.chars() {
-        if char == ' ' {
-            break;
-        }
-        ans.push(char);
-    }
-    ans
+
+
+//this function return i32 integer
+fn do_sum(a: i32, b: i32) -> i32 {
+	return a + b;
 }
