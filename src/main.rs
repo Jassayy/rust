@@ -1,15 +1,31 @@
-fn main(){
-    // let _ax = "kajsdib"; //can change space at runtime
-    //therefore needs more memory from the ram at runtime
-    //therefore we need to ask ram for more memory
-    let greeting: String = String::from("hello world");
+fn main() {
+    let is_even = true;
 
-    println!("{}" ,greeting);
-     let char: Option<char> = greeting.chars().nth(1); //type pf this optionally a char
+    if is_even {
+        println!("the number is even");
+    } else if !is_even {
+        println!("the number is odd");
+    }
 
-     //error: `Option<char>` doesn't implement `std::fmt::Display`
-     // the trait `std::fmt::Display` is not implemented for `Option<char>`
-    print!("{}" , char.unwrap()); //to get nth char of string
-    //therfore we cant do this.. we hve to "match"
-    //unwrap here works but dont use it 
+    // loops
+    for i in 0..11 {
+        println!("{}", i);
+    }
+
+    let sentence: String = String::from("my name is jas");
+    let first_word = get_first_word(&sentence);//passing only ref on sentence as in rust if we dont use & we transfer ownership into the function and hence we wont be able to use "sentence afterwards"
+
+    println!("{}", first_word); 
+}
+//this is how we can iterate over strings or even arrays or maps etc
+// fn function_name(args) -> return type { }
+fn get_first_word(sentence: &str) -> String {
+    let mut ans: String = String::from("");
+    for char in sentence.chars() {
+        if char == ' ' {
+            break;
+        }
+        ans.push(char);
+    }
+    ans
 }
