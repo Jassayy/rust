@@ -1,18 +1,16 @@
-// jargon 3 - ownership
-
-fn main(){
-       let s1 = String::from("Hi there");
-
-       print!("{}" , s1); //we can print here as Rihana can have fun with her boyfriend before moving on to the next
-
-       let s2 = s1;
-
-       //    print!("{}" , s1);
-       //we cannot use s1 anymore as it is already passed to s2
-       //Keep in mind Rihana can have only one boyfriend
-
-        print!("{}" , s2);
+fn main() {
+    let my_string = String::from("hello");
+    let my_string3 =  takes_ownership(my_string);
+    println!("{}", my_string3); // This line would cause a compile error because ownership has been moved.
 }
-//whenever owner gets out of scope heap memory gets deallocated
 
-       
+fn takes_ownership(some_string: String) -> String {
+    println!("{}", some_string); // `some_string` now owns the data.
+    //can rihana go back to her previous boyfriend? yes just return
+    return some_string;
+}
+
+
+//in this example rihana moves from boyfriend 1 -> boyfriend 2 and as he is about to die
+//rihana moves to boyfriend 3
+//what did we learn? rihana is a whore
