@@ -3,11 +3,13 @@
 // She can be borrowed by multiple people that she’s friends with but does no hanky panky
 // If she does want to do hanky panky, she can only have 1 borrower that she does it with. She cant simultaneously be with other borrowers (even with no hanky panky)
  
-//reference
+//borrowing
 fn main() {
-    let s1 = String::from("Hello");
-    let s2 = &s1; //s1 is borrowed here
+    let my_string: String = String::from("Hello, Rust!");
+    borow_variable(&my_string);  // Pass a reference to my_string
+    println!("{}", my_string);    // This is valid because ownership was not transferred
+}
 
-    println!("{}", s2);
-    println!("{}", s1);    // This is valid, The first pointer wasn't invalidated
+fn borow_variable(some_string: &String) {
+    println!("{}", some_string);  // some_string is borrowed and not moved
 }
